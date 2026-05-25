@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version as HTML5 for proper browser rendering and standards compliance -->
+<html lang="en">
+<!-- Root element of the HTML document. The 'lang' attribute sets the primary language to English for accessibility (screen readers) and SEO -->
+
+<head>
+    <!-- Contains meta-information about the document that is not displayed on the page itself -->
+    
+    <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the document as UTF-8, which supports almost all international characters, symbols, and emojis -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures proper responsive behavior on mobile devices by setting the viewport width equal to the device's width and initial zoom scale to 1.0 -->
+    
+    <title>Careers | Nass Tech Solution</title>
+    <!-- Sets the title of the web page, which appears on the browser tab and in search engine results -->
+    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Links an external CSS stylesheet (located at css/style.css) to control the visual styling and layout of the page -->
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Imports the Boxicons icon library from a CDN (Content Delivery Network), providing a wide range of scalable vector icons for use throughout the page -->
+    
+    <link rel="icon" href="images/logo/logo.png">
+    <!-- Sets the favicon (small icon displayed in the browser tab) to the company logo image -->
+</head>
+
+<body>
+    <!-- Contains all visible content of the web page that users interact with -->
+
+    <!-- ================= NAVIGATION BAR ================= -->
+    <!-- Creates the primary navigation menu at the top of the page for site-wide navigation -->
+    <nav>
+        <!-- Semantic HTML5 element specifically for navigation sections -->
+        
+        <div class="logo">
+            <!-- Container for the company logo -->
+            <img src="images/logo/logo.png" alt="Nass Tech Logo">
+            <!-- Displays the company logo image. The 'alt' attribute provides alternative text for screen readers and when images fail to load -->
+        </div>
+        
+        <ul class="nav-links">
+            <!-- Unordered list holding all primary navigation links -->
+            <li><a href="index.html">Home</a></li>
+            <!-- Link to the Home page -->
+            <li><a href="about_us.html">About</a></li>
+            <!-- Link to the About Us page -->
+            <li><a href="services.html">Services</a></li>
+            <!-- Link to the Services page -->
+            <li><a href="careers.html" class="active">Careers</a></li>
+            <!-- Link to the Careers page. The 'active' class highlights the current page in the navigation menu -->
+            <li><a href="client-portal.html">Client Portal</a></li>
+            <!-- Link to the Client Portal (login-protected area for existing clients) -->
+            <li><a href="enquiries.html">Enquiry</a></li>
+            <!-- Link to the Enquiry page -->
+            <li><a href="contact_us.html">Contact</a></li>
+            <!-- Link to the Contact Us page -->
+            <li><a href="blog.html">Blog</a></li>
+            <!-- Link to the company Blog page -->
+        </ul>
+        
+        <div class="nav-buttons">
+            <!-- Container for authentication/account action buttons -->
+            <a href="#" class="btn">Sign In</a>
+            <!-- Sign In button (placeholder link). Allows existing users to log into their account -->
+            <a href="#" class="btn logout">Sign Out</a>
+            <!-- Sign Out button with additional 'logout' class for specific styling -->
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <!-- Large promotional banner area at the top of the page to grab user attention and introduce the careers page -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(0,42,58,0.85), rgba(0,114,255,0.75)), url('images/hero/teamwork.jpg'); background-size: cover; background-position: center;">
+        <!-- Inline style creates a dark gradient overlay (135-degree angle from dark teal to semi-transparent blue) over a background image (teamwork.jpg). 
+             The overlay improves text readability. 'background-size: cover' ensures the image covers the entire section; 'background-position: center' centers the image -->
+        
+        <div class="hero-content">
+            <!-- Container for the hero text content -->
+            <h1>Join Our Team</h1>
+            <!-- Main heading of the hero section - encourages visitors to consider employment -->
+            <p>Build your career with Nass Tech Solution. We're looking for passionate IT professionals.</p>
+            <!-- Supporting subheading describing the target candidates (passionate IT professionals) -->
+        </div>
+    </section>
+
+    <!-- ================= WHY WORK WITH US SECTION ================= -->
+    <!-- Highlights the benefits and advantages of working at the company to attract potential candidates -->
+    <section class="section">
+        <!-- Generic section container with class 'section' for consistent styling -->
+        
+        <h2>Why Work With Us?</h2>
+        <!-- Section heading asking a persuasive question to engage job seekers -->
+        
+        <div class="contact-grid">
+            <!-- Container using CSS Grid layout to display benefit cards in a responsive grid -->
+            
+            <!-- ================= BENEFIT CARD 1: Growth Opportunities ================= -->
+            <div class="contact-card">
+                <!-- Individual card component for one employee benefit -->
+                <div class="contact-icon"><i class='bx bx-line-chart'></i></div>
+                <!-- Boxicons line chart icon representing career growth and advancement -->
+                <h3>Growth Opportunities</h3>
+                <!-- Benefit title -->
+                <p>Continuous learning and career advancement paths.</p>
+                <!-- Description highlighting professional development and upward mobility -->
+            </div>
+            
+            <!-- ================= BENEFIT CARD 2: Great Culture ================= -->
+            <div class="contact-card">
+                <div class="contact-icon"><i class='bx bx-heart'></i></div>
+                <!-- Boxicons heart icon representing positive workplace culture and care for employees -->
+                <h3>Great Culture</h3>
+                <p>Collaborative, innovative, and inclusive work environment.</p>
+                <!-- Description emphasizing teamwork, creativity, and diversity/inclusion -->
+            </div>
+            
+            <!-- ================= BENEFIT CARD 3: Competitive Pay ================= -->
+            <div class="contact-card">
+                <div class="contact-icon"><i class='bx bx-dollar'></i></div>
+                <!-- Boxicons dollar sign icon representing compensation and financial rewards -->
+                <h3>Competitive Pay</h3>
+                <p>Attractive salaries and performance bonuses.</p>
+                <!-- Description highlighting base pay plus incentive structure -->
+            </div>
+            
+            <!-- ================= BENEFIT CARD 4: Remote Friendly ================= -->
+            <div class="contact-card">
+                <div class="contact-icon"><i class='bx bx-home-smile'></i></div>
+                <!-- Boxicons home with smile icon representing work-from-home flexibility -->
+                <h3>Remote Friendly</h3>
+                <p>Flexible work arrangements available.</p>
+                <!-- Description highlighting location flexibility (remote/hybrid options) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= OPEN POSITIONS SECTION ================= -->
+    <!-- Displays current job vacancies with details about role, location, salary, and application link -->
+    <section class="section">
+        <h2>Open Positions</h2>
+        <!-- Section heading for the list of available job opportunities -->
+        
+        <div class="cards">
+            <!-- Container using CSS Grid or Flexbox to display job cards in a responsive grid layout -->
+            
+            <!-- ================= JOB CARD 1: Cybersecurity Analyst ================= -->
+            <div class="card">
+                <!-- Individual card component for one job position -->
+                <img src="images/careers/cyber_analyst.jpg" alt="Cybersecurity">
+                <!-- Job-related image with descriptive alt text -->
+                <h3>🔒 Cybersecurity Analyst</h3>
+                <!-- Job title with lock emoji representing security focus -->
+                <p>Full-time | Johannesburg / Remote</p>
+                <!-- Employment type (Full-time) and location options (Johannesburg or Remote work) -->
+                <p>Experience: 3+ years in security operations</p>
+                <!-- Required experience level and domain expertise -->
+                <div class="price">R530k - R880k</div>
+                <!-- Salary range displayed using the 'price' class for consistent styling (annual salary in South African Rand) -->
+                <a href="enquiries.html" class="btn" style="margin-top: 15px;">Apply Now</a>
+                <!-- Call-to-action button linking to the Enquiries page for application submission. 
+                     Inline margin adds spacing above the button -->
+            </div>
+            
+            <!-- ================= JOB CARD 2: Cloud Security Engineer ================= -->
+            <div class="card">
+                <img src="images/careers/cloud_secu.png" alt="Cloud Engineer">
+                <h3>☁️ Cloud Security Engineer</h3>
+                <!-- Job title with cloud emoji representing cloud computing focus -->
+                <p>Full-time | Pretoria / Hybrid</p>
+                <!-- Location: Pretoria office with hybrid work model (mix of in-office and remote) -->
+                <p>Experience: AWS/Azure security certifications</p>
+                <!-- Required cloud platform certifications (AWS and/or Azure) -->
+                <div class="price">R324k - R420k</div>
+                <!-- Annual salary range for this position -->
+                <a href="enquiries.html" class="btn" style="margin-top: 15px;">Apply Now</a>
+            </div>
+            
+            <!-- ================= JOB CARD 3: Data & Analytics Specialist ================= -->
+            <div class="card">
+                <img src="images/careers/data_analyst.jpg" alt="Data Scientist">
+                <h3>📊 Data & Analytics Specialist</h3>
+                <!-- Job title with bar chart emoji representing data analytics focus -->
+                <p>Full-time | Cape Town / Remote</p>
+                <!-- Location: Cape Town office or fully remote option -->
+                <p>Experience: Python, SQL, Power BI</p>
+                <!-- Required technical skills: Python programming, SQL databases, Power BI visualization -->
+                <div class="price">R70k - R90k</div>
+                <!-- Note: This salary range appears significantly lower than others (R70k-R90k annually vs monthly?).
+                     In context with other roles showing R300k+, this likely indicates R70k-R90k per month (approx R840k-R1.08M annually) -->
+                <a href="enquiries.html" class="btn" style="margin-top: 15px;">Apply Now</a>
+            </div>
+            
+            <!-- ================= JOB CARD 4: Senior IT Support Engineer ================= -->
+            <div class="card">
+                <img src="images/careers/engineer.jpg" alt="IT Support">
+                <h3>💻 Senior IT Support Engineer</h3>
+                <!-- Job title with laptop emoji representing IT support/hardware focus -->
+                <p>Full-time | Durban</p>
+                <!-- Location: Durban office (on-site position, no remote option specified) -->
+                <p>Experience: 5+ years in technical support</p>
+                <!-- Required experience: 5+ years specifically in technical support roles -->
+                <div class="price">R18k - R37k</div>
+                <!-- Monthly salary range (R18,000 - R37,000 per month) - typical for senior support roles in South Africa -->
+                <a href="enquiries.html" class="btn" style="margin-top: 15px;">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- Bottom section of the page containing copyright and legal information -->
+    <footer>
+        <!-- Semantic HTML5 element for footer content -->
+        <p>© 2026 Nass Tech Solution | All Rights Reserved</p>
+        <!-- Copyright notice with the company name, current year, and legal rights statement -->
+    </footer>
+<script>
+    // ================= MOBILE MENU FUNCTIONALITY =================
+    // This script adds a hamburger menu button and makes the navigation responsive on mobile devices
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the navigation element
+        const nav = document.querySelector('nav');
+        
+        // Check if hamburger button already exists (to avoid duplicates)
+        const existingToggle = document.querySelector('.menu-toggle');
+        
+        // Create hamburger button if it doesn't exist
+        if (!existingToggle && nav) {
+            // Create the hamburger button element
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'menu-toggle';
+            toggleBtn.setAttribute('aria-label', 'Toggle menu');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.innerHTML = '<i class="bx bx-menu"></i>'; // Using Boxicons menu icon
+            
+            // Find where to insert the button (after the logo)
+            const logo = document.querySelector('.logo');
+            if (logo && logo.nextSibling) {
+                nav.insertBefore(toggleBtn, logo.nextSibling);
+            } else {
+                nav.insertBefore(toggleBtn, nav.firstChild);
+            }
+        }
+        
+        // Get the menu toggle button and navigation links
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        // Add click functionality if both elements exist
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Toggle the 'active' class on nav-links
+                navLinks.classList.toggle('active');
+                
+                // Update aria-expanded attribute for accessibility
+                const isExpanded = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isExpanded);
+                
+                // Change icon between menu and close (X)
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('bx-menu');
+                        icon.classList.add('bx-x');
+                    } else {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                }
+            });
+            
+            // Close the menu when a navigation link is clicked (good user experience)
+            const navLinksItems = navLinks.querySelectorAll('a');
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    
+                    // Reset the menu icon back to hamburger
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                    
+                    // Update aria-expanded
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+        
+        // Close menu when clicking outside of it (optional but improves UX)
+        document.addEventListener('click', function(event) {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks && navLinks.classList.contains('active')) {
+                // Check if click is outside both the menu toggle and the nav links
+                if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    
+                    // Reset the menu icon back to hamburger
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                    
+                    // Update aria-expanded
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        
+        // Handle window resize - reset menu if screen becomes larger
+        window.addEventListener('resize', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                
+                // Reset the menu icon
+                if (menuToggle) {
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1521 @@
+/* ========================= RESET ========================= */
+/* Resets default browser styles to ensure consistent rendering across all browsers */
+* {                                                                                 /* reference   https://meyerweb.com/eric/tools/css/reset/ */
+    margin: 0;
+    /* Removes default margin from all elements */
+    padding: 0;
+    /* Removes default padding from all elements */
+    box-sizing: border-box;
+    /* Includes padding and border in element's total width/height calculation, making layout more predictable */
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    /* Sets a modern font stack with fallbacks for cross-platform compatibility:
+         - 'Segoe UI': Windows
+         - system-ui: Standard system font
+         - -apple-system: macOS/iOS
+         - BlinkMacSystemFont: macOS Chrome
+         - 'Roboto': Android
+         - sans-serif: Ultimate fallback */
+}
+
+body {
+    background: #f4f7fc;
+    /* Light blue-gray background for the entire page, creating a clean, professional look */
+}
+
+/* ========================= NAVBAR ========================= */
+/* Styles the main navigation bar at the top of the page */
+nav {
+    background: #000000;                                                                              /* reference "https://developers.google.com/web/fundamentals/design-and-ux/responsive"*/
+    /* Pure black background for high contrast with white text */
+    padding: 15px 60px;
+    /* Vertical padding 15px, horizontal padding 60px for spacious layout */
+    display: flex;
+    /* Enables flexbox layout for horizontal alignment of child elements */
+    align-items: center;
+    /* Vertically centers all items within the nav bar */
+    justify-content: space-between;
+    /* Pushes logo to left, nav links to center/middle, buttons to right */
+    flex-wrap: wrap;
+    /* Allows items to wrap to next line on smaller screens */
+    position: sticky;
+    /* Makes the navbar stick to the top of the viewport when scrolling */
+    top: 0;
+    /* Stick position at the very top of the viewport */
+    z-index: 1000;
+    /* Ensures navbar stays above all other content (high stacking order) */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);                                               /* reference "https://developers.google.com/web/fundamentals/design-and-ux/responsive"*/
+    /* Subtle shadow below navbar for depth and separation from content */
+}
+
+.logo img {
+    width: 140px;
+    /* Fixed width for logo image */
+    height: auto;
+    /* Height adjusts automatically to maintain aspect ratio */
+    display: block;
+    /* Removes extra spacing below image that occurs with inline display */
+    border-radius: 10px;
+    /* Slightly rounded corners for the logo */
+    transition: transform 0.3s;
+    /* Smooth animation for hover effect (0.3 seconds duration) */
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarges logo (5% larger) when user hovers over it */
+}
+
+.nav-links {
+    display: flex;
+    /* Horizontal layout for navigation links */
+    list-style: none;
+    /* Removes default bullet points from list items */
+    gap: 30px;
+    /* 30px spacing between each navigation link */
+    flex-wrap: wrap;
+    /* Allows links to wrap to multiple lines on smaller screens */
+}
+
+.nav-links a {
+    text-decoration: none;                                                                          /* reference "https://developers.google.com/web/fundamentals/design-and-ux/responsive"*/         
+    /* Removes default underline from links */
+    color: white;
+    /* White text color for contrast against black navbar */
+    font-size: 16px;
+    /* Comfortable reading size */
+    font-weight: 500;
+    /* Medium font weight (semi-bold, 500 out of 900) */
+    transition: 0.3s;
+    /* Smooth transition for hover effects (0.3 seconds) */
+    position: relative;
+    /* Required for absolute positioning of the underline pseudo-element */
+}
+
+/* Creates an animated underline effect for navigation links */
+.nav-links a::after {
+    content: '';
+    /* Empty content required for pseudo-element to display */
+    position: absolute;
+    /* Positions relative to the parent 'a' element */
+    bottom: -5px;
+    /* Places underline 5px below the text */
+    left: 0;
+    /* Starts underline from the left edge of the text */
+    width: 0%;
+    /* Initially zero width (hidden) - will expand on hover */
+    height: 2px;
+    /* 2 pixels thick underline */
+    background: #00c6ff;
+    /* Bright cyan color for the underline */
+    transition: 0.3s;
+    /* Smooth expansion animation (0.3 seconds) */
+}
+
+/* Expands the underline to full width on hover or when link is active */
+.nav-links a:hover::after,
+.nav-links .active::after {
+    width: 100%;
+    /* Underline expands to full text width */
+}
+
+/* Changes text color on hover or when link represents current page */
+.nav-links a:hover,
+.nav-links .active {
+    color: #00c6ff;
+    /* Bright cyan color matching the underline */
+}
+
+/* ========================= BUTTONS ========================= */
+/* Base button styling used across all call-to-action buttons */
+.btn {
+    padding: 8px 20px;                                                                                      /* reference "https://www.smashingmagazine.com/2009/09/complete-guide-to-css-font-stacks/"*/
+    /* Vertical padding 8px, horizontal padding 20px for comfortable click area */
+    border-radius: 30px;
+    /* Fully rounded corners (pill shape) */
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* Diagonal gradient from bright cyan to deep blue (135 degrees) */
+    color: white;
+    /* White text for contrast */
+    text-decoration: none;
+    /* Removes underline from link buttons */
+    transition: 0.3s;
+    /* Smooth hover animation */
+    font-weight: 500;
+    /* Medium font weight */
+    display: inline-block;
+    /* Allows setting padding while keeping inline behavior */
+    cursor: pointer;
+    /* Changes cursor to hand pointer on hover */
+    border: none;
+    /* Removes default button border */
+    font-size: 14px;
+    /* Standard button text size */
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    /* Lifts button up by 2 pixels on hover for a "raise" effect */
+    box-shadow: 0 5px 15px rgba(0,114,255,0.3);
+    /* Adds blue-tinted shadow below button for depth */
+}
+
+/* Special styling for logout/sign out buttons (red theme instead of blue) */
+.logout {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    /* Diagonal gradient from light red to dark red */
+}
+
+.logout:hover {
+    box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+    /* Red-tinted shadow for logout button hover */
+}
+
+/* Container for authentication buttons (Sign In, Sign Out) */
+.nav-buttons {
+    display: flex;
+    /* Horizontal layout */
+    gap: 12px;
+    /* 12px spacing between the two buttons */
+}
+
+/* Active/pressed state for buttons */
+.btn:active {
+    transform: scale(0.95);
+    /* Slightly shrinks button when clicked for tactile feedback */
+}
+
+/* ========================= HERO ========================= */
+/* Large banner section at the top of each page */
+.hero {
+    min-height: 50vh;
+    /* Minimum height of 50% of the viewport height */
+    background-size: cover;
+    /* Background image covers entire section area */
+    background-position: center;
+    /* Centers the background image */
+    display: flex;
+    /* Enables flexbox for centering content */
+    flex-direction: column;
+    /* Stacks heading and paragraph vertically */
+    align-items: center;
+    /* Centers content horizontally */
+    justify-content: center;
+    /* Centers content vertically */
+    text-align: center;
+    /* Centers text within the section */
+    color: white;
+    /* White text for contrast against dark overlays */
+    position: relative;
+    /* Allows positioning of pseudo-elements if needed */
+    background-color: #0a2b3a;
+    /* Fallback background color in case image fails to load */
+    padding: 80px 20px;
+    /* Large padding: 80px top/bottom, 20px left/right */
+}
+
+.hero h1 {
+    font-size: 56px;
+    /* Large heading size for prominence */
+    margin-bottom: 20px;
+    /* Space between heading and paragraph */
+    font-weight: 700;
+    /* Bold font weight */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);                                             /* reference "https://uigradients.com/#ClearSky" */
+    /* Dark shadow behind text for better readability over images */
+}
+
+.hero p {
+    font-size: 20px;
+    /* Larger than standard paragraph text */
+    max-width: 700px;
+    /* Limits width for better readability on large screens */
+    margin: 0 auto;
+    /* Centers the paragraph horizontally */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    /* Subtle shadow for readability */
+}
+
+/* Container for hero content with consistent width and padding */
+.hero-content {
+    text-align: center;
+    /* Centers all child elements */
+    max-width: 700px;
+    /* Limits content width */
+    padding: 20px;
+    /* Inner spacing */
+}
+
+.hero-content .btn {
+    margin-top: 45px;
+    /* Large top margin to separate button from paragraph */
+    display: inline-block;
+    /* Allows margin while staying inline */
+}
+
+/* ========================= SECTIONS ========================= */
+/* Standard section container for consistent spacing across all pages */
+.section {
+    padding: 70px 20px;
+    /* Vertical padding 70px, horizontal 20px */
+    max-width: 1200px;
+    /* Limits maximum width for readability on large screens */
+    margin: 0 auto;
+    /* Centers the section horizontally */
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    /* 2.5 times the root font size (typically 40px if root is 16px) */
+    text-align: center;
+    /* Centers section headings */
+    margin-bottom: 50px;
+    /* Space below heading before content starts */
+    color: #1a2a3a;
+    /* Dark slate color for headings */
+    position: relative;
+    /* Required for pseudo-element positioning */
+}
+
+/* Creates a decorative underline/gradient bar below section headings */
+.section h2::after {
+    content: "";
+    /* Empty content required for pseudo-element */
+    display: block;
+    /* Makes the pseudo-element a block-level element */
+    width: 80px;
+    /* Fixed width for the decorative bar */
+    height: 4px;
+    /* 4 pixels thick */
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* Cyan to blue gradient matching brand colors */
+    margin: 15px auto 0;
+    /* Top margin 15px, auto for centering, bottom margin 0 */
+    border-radius: 2px;
+    /* Slightly rounded corners */
+}
+
+/* ========================= CARDS (images & videos) ========================= */
+/* Responsive grid layout for card components (services, jobs, blog posts) */
+.cards {
+    display: grid;
+    /* Enables CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Creates responsive columns:
+         - auto-fit: Creates as many columns as will fit
+         - minmax(320px, 1fr): Each column at least 320px wide, can grow equally to fill space */
+    gap: 30px;
+    /* 30px spacing between cards */
+}
+
+/* Individual card component styling */
+.card {
+    background: white;
+    /* White background for contrast against page background */
+    border-radius: 20px;
+    /* Rounded corners for modern appearance */
+    overflow: hidden;
+    /* Ensures content respects border radius (no overflow outside corners) */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    /* Subtle shadow for depth */
+    text-align: center;
+    /* Centers text inside cards */
+    padding-bottom: 25px;
+    /* Bottom padding inside card before hover transition */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    /* Lifts card up by 8 pixels on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    /* Deeper shadow on hover for more pronounced lift effect */
+}
+
+/* Images and videos inside cards */
+.card img, .card video {
+    width: 100%;
+    /* Full width of the card container */
+    height: 200px;
+    /* Fixed height for consistency across all cards */
+    object-fit: cover;
+    /* Scales image/video to cover the area without distorting aspect ratio (may crop) */
+    transition: transform 0.3s;
+    /* Smooth zoom effect on hover */
+}
+
+/* Zoom effect on hover for images/videos */
+.card:hover img, .card:hover video {
+    transform: scale(1.05);
+    /* Slightly enlarges media (5% larger) on card hover */
+}
+
+.card h3 {
+    margin: 20px 0 10px;
+    /* Top margin 20px, left/right 0, bottom margin 10px */
+    color: #0a1922;                                                                /* reference "https://uigradients.com/#ClearSky" */
+    /* Dark navy color for headings */
+    font-size: 1.4rem;
+    /* 1.4 times root font size (about 22px) */
+}
+
+.card p {
+    padding: 0 20px;
+    /* Horizontal padding only (left/right 20px) */
+    color: #555;
+    /* Medium gray for body text (less contrast than headings) */
+    line-height: 1.6;
+    /* 1.6 times font size for comfortable reading */
+    margin-bottom: 10px;
+    /* Space below paragraph */
+}
+
+.card small {
+    color: #888;                                                                  /* reference "https://uigradients.com/#ClearSky" */
+    /* Light gray for metadata (dates, read times) */
+    font-size: 12px;
+    /* Smaller font for supplementary information */
+}
+
+/* Price styling for service cards and job listings */
+.price {
+    font-size: 28px;
+    /* Large font to draw attention to pricing */
+    font-weight: bold;
+    /* Bold text */
+    color: #0072ff;
+    /* Brand blue color */
+    margin: 15px 0;
+    /* Vertical margin 15px, horizontal 0 */
+    background: linear-gradient(135deg, #00c6ff10, #0072ff10);
+    /* Very subtle gradient background (10% opacity) */
+    display: inline-block;
+    /* Allows padding and margin while staying inline flow */
+    padding: 8px 20px;
+    /* Comfortable padding inside price pill */
+    border-radius: 40px;
+    /* Fully rounded pill shape */
+}
+
+.price span {
+    font-size: 14px;
+    /* Smaller font for pricing period (e.g., "/month") */
+    color: #777;
+    /* Medium gray for secondary pricing text */
+    font-weight: normal;
+    /* Normal weight (not bold) */
+}
+
+/* Video element specific styles */
+.card video {
+    background: #1a2a3a;
+    /* Dark fallback background while video loads */
+    cursor: pointer;
+    /* Indicates video is clickable */
+}
+
+/* Styles for video controls (WebKit browsers - Chrome, Safari, Edge) */
+.card video::-webkit-media-controls {
+    background: rgba(0,0,0,0.6);
+    /* Semi-transparent dark background for control bar */
+    border-radius: 10px;
+    /* Rounded corners on control bar */
+}
+
+/* Button inside cards (e.g., "Read More", "Apply Now") */
+.card .btn {
+    margin-top: 10px;
+    /* Space above button */
+    display: inline-block;
+    /* Allows margin and padding */
+    padding: 10px 25px;
+    /* Comfortable click area */
+}
+
+/* ========================= CONTACT PAGE STYLES ========================= */
+/* Grid layout for contact information cards */
+.contact-grid {
+    display: grid;
+    /* Enables CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive columns, minimum 280px each */
+    gap: 30px;
+    /* 30px spacing between cards */
+    margin-top: 40px;
+    /* Space above the grid */
+}
+
+/* Individual contact information card (address, phone, email, hours) */
+.contact-card {
+    background: white;
+    /* White background */
+    border-radius: 20px;
+    /* Rounded corners */
+    padding: 35px 25px;
+    /* Ample padding: 35px top/bottom, 25px left/right */
+    text-align: center;
+    /* Centers all content */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    /* Subtle shadow for depth */
+    transition: all 0.3s ease;
+    /* Smooth hover transition */
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    /* Lifts card on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    /* Deeper shadow on hover */
+}
+
+/* Circular icon container in contact cards */
+.contact-icon {
+    width: 75px;
+    height: 75px;
+    /* Square base, will become circle with border-radius */
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* Brand gradient background */
+    border-radius: 50%;
+    /* Creates perfect circle */
+    display: flex;
+    /* Enables flexbox for centering icon */
+    align-items: center;
+    /* Centers icon vertically */
+    justify-content: center;
+    /* Centers icon horizontally */
+    margin: 0 auto 20px;
+    /* Auto left/right for centering, bottom margin 20px */
+    transition: transform 0.3s;
+    /* Smooth scale transition on hover */
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+    /* Enlarges icon circle by 10% on card hover */
+}
+
+.contact-icon i {
+    font-size: 35px;
+    /* Icon size inside the circle */
+    color: white;
+    /* White icon against gradient background */
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    /* Heading size (about 24px) */
+    margin-bottom: 15px;
+    /* Space below heading */
+    color: #1a2a3a;
+    /* Dark slate color */
+}
+
+.contact-card p {
+    color: #555;
+    /* Medium gray text */
+    line-height: 1.6;
+    /* Comfortable line height */
+    margin: 8px 0;
+    /* Vertical spacing between paragraphs */
+}
+
+.contact-card a {
+    color: #0072ff;
+    /* Brand blue for links */
+    text-decoration: none;
+    /* Removes underline */
+    transition: 0.3s;
+    /* Smooth hover transition */
+    font-weight: 500;
+    /* Medium font weight */
+}
+
+.contact-card a:hover {
+    color: #00c6ff;
+    /* Brighter cyan on hover */
+    text-decoration: underline;
+    /* Underline appears on hover for clarity */
+}
+
+/* ========================= ENQUIRY PAGE STYLES ========================= */
+/* Two-column layout for enquiry page (info card + form) */
+.enquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Left column takes 1 part, right column 1.5 parts (right column wider) */
+    gap: 40px;
+    /* 40px spacing between columns */
+    align-items: start;
+    /* Aligns items to the top of their cells */
+}
+
+/* Left column info card with gradient background */
+.enquiry-info-card {
+    background: linear-gradient(135deg, #0a1922, #0e2a38);
+    /* Dark navy to teal gradient */
+    border-radius: 25px;
+    /* Rounded corners */
+    padding: 40px 30px;
+    /* Ample padding */
+    color: white;
+    /* White text for contrast */
+    position: sticky;
+    /* Makes card stick when scrolling */
+    top: 100px;
+    /* Sticks 100px from top of viewport */
+}
+
+/* Icon container inside enquiry info card */
+.enquiry-info-card .info-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* Brand gradient */
+    border-radius: 50%;
+    /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    /* Space below icon */
+}
+
+.enquiry-info-card .info-icon i {
+    font-size: 35px;
+    color: white;
+}
+
+.enquiry-info-card h3 {
+    font-size: 1.8rem;
+    /* Large heading (about 29px) */
+    margin-bottom: 15px;
+}
+
+.enquiry-info-card p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    /* Slightly transparent for subtlety */
+}
+
+/* Bulleted list with checkmark icons */
+.info-list {
+    list-style: none;
+    /* Removes default bullets */
+    margin-top: 20px;
+}
+
+.info-list li {
+    margin-bottom: 12px;
+    /* Space between list items */
+    display: flex;
+    /* Enables horizontal alignment */
+    align-items: center;
+    /* Centers vertically */
+    gap: 10px;
+    /* Space between icon and text */
+}
+
+.info-list li i {
+    color: #00c6ff;
+    /* Cyan checkmarks */
+    font-size: 20px;
+}
+
+/* Right column form container */
+.enquiry-form-container {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.enquiry-form-container h3 {
+    font-size: 1.6rem;
+    color: #1a2a3a;
+    margin-bottom: 25px;
+    display: flex;
+    /* Allows icon and text on same line */
+    align-items: center;
+    gap: 10px;
+}
+
+.enquiry-form-container h3 i {
+    color: #00c6ff;
+    /* Cyan icon */
+}
+
+/* ========================= FORM STYLES ========================= */
+/* Container for forms with background and shadow */
+.form-container {
+    background: white;
+    border-radius: 25px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 700px;
+    /* Limits form width for better readability */
+    margin: 0 auto;
+    /* Centers form horizontally */
+}
+
+/* Two-column layout for form rows (first name/last name, email/phone, etc.) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 20px;
+    /* 20px between columns */
+}
+
+/* Container for individual form fields */
+.input-group {
+    margin-bottom: 22px;
+    /* Space below each field */
+}
+
+.input-group label {
+    display: block;
+    /* Label on its own line */
+    margin-bottom: 8px;
+    /* Space between label and input */
+    font-weight: 600;
+    /* Semi-bold text */
+    color: #1a2a3a;
+    /* Dark slate color */
+}
+
+.input-group label i {
+    color: #00c6ff;
+    /* Cyan icon */
+    margin-right: 5px;
+    /* Space between icon and text */
+}
+
+/* Styling for all input fields, textareas, and form elements */
+.input-group input,
+.input-group textarea,
+.enquiry-form-container input,
+.enquiry-form-container textarea,
+form input,
+form textarea {
+    width: 100%;
+    /* Full width of container */
+    padding: 14px 18px;
+    /* Comfortable padding inside fields */
+    border: 2px solid #e0e6ed;
+    /* Light gray border */
+    border-radius: 12px;
+    /* Rounded corners */
+    font-size: 1rem;
+    /* Standard font size */
+    transition: all 0.3s;
+    /* Smooth focus transition */
+    background: #f9fbfd;
+    /* Very light blue-gray background */
+}
+
+/* Focus state for form inputs (when user clicks/tabs into field) */
+.input-group input:focus,
+.input-group textarea:focus,
+.enquiry-form-container input:focus,
+.enquiry-form-container textarea:focus,
+form input:focus,
+form textarea:focus {
+    outline: none;
+    /* Removes default browser outline */
+    border-color: #00c6ff;
+    /* Cyan border on focus */
+    background: white;
+    /* White background on focus */
+    box-shadow: 0 0 0 4px rgba(0,198,255,0.1);
+    /* Cyan glow effect around field */
+}
+
+/* Submit button styling (shared across all forms) */
+.btn-submit,
+form button,
+.enquiry-form-container button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* Brand gradient */
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 40px;
+    /* Pill shape */
+    font-size: 1rem;
+    font-weight: 600;
+    /* Bold text */
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    /* Full width button */
+    display: flex;
+    /* Enables icon alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Space between icon and text */
+}
+
+.btn-submit:hover,
+form button:hover,
+.enquiry-form-container button:hover {
+    transform: translateY(-2px);
+    /* Lifts button on hover */
+    box-shadow: 0 8px 20px rgba(0,114,255,0.3);
+    /* Blue shadow effect */
+}
+
+/* ========================= FOOTER ========================= */
+/* Page footer styling */
+footer {
+    background: #0a1922;
+    /* Dark navy background */
+    color: #ccc;
+    /* Light gray text (not pure white for less contrast) */
+    text-align: center;
+    /* Centers copyright text */
+    padding: 35px 20px;
+    /* Vertical padding 35px, horizontal 20px */
+    margin-top: 50px;
+    /* Space above footer to separate from content */
+}
+
+/* ========================= SIDEBAR ========================= */
+/* Fixed-position sidebar (visible on desktop, hidden on mobile via media query) */
+aside {
+    position: fixed;                                                                          /* reference "https://www.microsoft.com/design/fluent" */
+    /* Fixed position relative to viewport */
+    top: 180px;
+    /* 180px from top of viewport */
+    left: 20px;
+    /* 20px from left edge */
+    background: rgba(108, 117, 125, 0.95);
+    /* Semi-transparent gray (95% opacity) */
+    backdrop-filter: blur(10px);
+    /* Blurs content behind the sidebar (glassmorphism effect) */
+    padding: 20px;
+    /* Inner spacing */
+    border-radius: 15px;
+    /* Rounded corners */
+    width: 210px;
+    /* Fixed width */
+    color: white;
+    z-index: 999;
+    /* High stacking order (below navbar's 1000) */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    /* Shadow for depth */
+}
+
+aside h1 {                                                                                             /* reference "https://www.microsoft.com/design/fluent" */
+    font-size: 18px;
+    margin-bottom: 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    /* Semi-transparent white bottom border */
+    padding-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    /* Removes bullets */
+}
+
+aside ul li {
+    margin-bottom: 14px;
+    /* Space between list items */
+}
+
+aside ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    /* Enables icon + text on same line */
+    align-items: center;
+    gap: 12px;
+    /* Space between icon and text */
+    transition: 0.3s;
+    padding: 5px 0;
+    /* Vertical padding for larger click area */
+    font-size: 14px;
+}
+
+aside ul li a:hover {
+    color: #00c6ff;
+    /* Cyan on hover */
+    transform: translateX(5px);
+    /* Slides link 5px to the right on hover */
+}
+
+aside ul li a i {
+    font-size: 20px;
+    width: 25px;
+    /* Fixed width for consistent alignment */
+}
+
+/* ========================= MAP SECTION STYLES ========================= */
+/* Wrapper for Google Maps iframe */
+.map-wrapper {                                                                                               /* reference "https://developers.google.com/maps/documentation/embed/get-started"*/
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Ensures iframe respects border radius */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-wrapper:hover {
+    transform: translateY(-5px);                                                         /* reference "https://developers.google.com/maps/documentation/embed/get-started"*/  
+    /* Lifts map wrapper on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    /* Deeper shadow on hover */
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 400px;
+    /* Fixed height for map */
+    border: 0;
+    /* Removes default iframe border */
+    display: block;
+    /* Removes extra spacing below iframe */
+}
+
+/* Address text below map */
+.map-address {                                                                          /* reference "https://developers.google.com/maps/documentation/embed/get-started"*/
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    color: #0a2f44;
+    font-weight: 500;
+}
+
+/* ========================= BLOG VIDEO SPECIFIC ========================= */
+/* Ensures blog videos have consistent sizing and rounded top corners */
+.card video {
+    width: 100%;                                                                 /* reference "https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-media-controls" */
+    height: 200px;
+    object-fit: cover;
+    background: #1a2a3a;
+    border-radius: 15px 15px 0 0;
+    /* Rounded only on top corners (matches card's border radius) */
+}
+
+/* ========================= ACTIVE NAVIGATION ========================= */
+/* Ensures current page link in navigation has cyan color and full underline */
+.nav-links .active {
+    color: #00c6ff;
+}
+
+.nav-links .active::after {
+    width: 100%;
+    /* Full width underline for active page */
+}
+
+/* ========================= SCROLL BEHAVIOR ========================= */
+/* Enables smooth scrolling when clicking anchor links (e.g., #section-id) */
+html {
+    scroll-behavior: smooth;                                                            /* reference "https://www.w3.org/TR/css-scroll-snap-1/" */
+}
+
+/* ========================= SERVICE ICONS IN CARDS ========================= */
+/* Styling for icons used inside service feature cards */
+.card i {
+    font-size: 48px;                                                                         /* reference "https://fontawesome.com/" */
+    /* Large icon size */
+    color: #0072ff;
+    /* Brand blue */
+    margin-top: 20px;
+    /* Space above icon */
+    display: inline-block;
+    /* Allows margin while staying inline */
+}
+
+/* ========================= RESPONSIVE DESIGN ========================= */
+/* Media queries for different screen sizes - ensures mobile-friendly design */
+
+/* Large desktops and tablets (1200px and below) */
+@media (max-width: 1200px) {
+    aside {
+        display: none;
+        /* Hides sidebar on screens narrower than 1200px */
+    }
+    
+    nav {
+        padding: 15px 30px;
+        /* Reduces horizontal padding on smaller screens */
+    }
+}
+
+/* Tablets (900px and below) */
+@media (max-width: 900px) {
+    .enquiry-grid {
+        grid-template-columns: 1fr;
+        /* Stacks columns vertically on tablets */
+        gap: 30px;
+    }
+    
+    .enquiry-info-card {
+        position: relative;
+        /* Removes sticky positioning on tablets */
+        top: 0;
+    }
+}
+
+/* Mobile devices (768px and below) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        /* Stacks navbar items vertically */
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        /* Centers navigation links */
+        gap: 18px;
+        /* Reduces gap between links */
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+        /* Smaller heading on mobile */
+    }
+    
+    .hero p {
+        font-size: 16px;
+        /* Smaller paragraph text */
+    }
+    
+    .section h2 {
+        font-size: 28px;
+        /* Smaller section headings */
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        /* Stacks form columns vertically */
+        gap: 0;
+    }
+    
+    .form-container {
+        padding: 25px;
+        /* Less padding on mobile */
+    }
+    
+    .contact-card {
+        padding: 25px 20px;
+        /* Reduced padding */
+    }
+    
+    .enquiry-form-container {
+        padding: 25px;
+    }
+    
+    .enquiry-info-card {
+        padding: 25px;
+    }
+    
+    .enquiry-info-card h3 {
+        font-size: 1.4rem;
+        /* Smaller heading */
+    }
+    
+    .cards {
+        gap: 20px;
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+    }
+    
+    .contact-grid {
+        gap: 20px;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+        /* Smaller card headings */
+    }
+    
+    .price {
+        font-size: 22px;
+        /* Smaller price text */
+        padding: 6px 15px;
+    }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+        /* Even smaller heading */
+    }
+    
+    .section {
+        padding: 40px 15px;
+        /* Reduced section padding */
+    }
+    
+    .btn {
+        padding: 6px 15px;
+        /* Smaller buttons */
+        font-size: 12px;
+    }
+    
+    .nav-links {
+        gap: 12px;
+        /* Tighter link spacing */
+    }
+    
+    .nav-links a {
+        font-size: 13px;
+        /* Smaller link text */
+    }
+    
+    .contact-icon {
+        width: 55px;
+        height: 55px;
+        /* Smaller icon circles */
+    }
+    
+    .contact-icon i {
+        font-size: 25px;
+        /* Smaller icons */
+    }
+    
+    .contact-card h3 {
+        font-size: 1.2rem;
+        /* Smaller headings */
+    }
+}
+
+/* ========================= NEWSLETTER SECTION ========================= */
+/* Smooth transition for newsletter subscription message */
+#newsletterMsg {
+    transition: all 0.3s ease;
+}
+
+/* ========================= PRICING TABLE HIGHLIGHTS ========================= */
+/* Centers price elements and makes them fit content width */
+.card .price {
+    margin: 15px auto;
+    /* Auto left/right centers the element horizontally */
+    width: fit-content;
+    /* Width shrinks to fit content rather than full width */
+}
+
+/* ========================= IMAGE PLACEHOLDER STYLES ========================= */
+/* Shows a gradient background while images are loading (prevents blank spaces) */
+img[src*="images/"] {
+    background: linear-gradient(135deg, #e0e6ed, #f4f7fc);
+}
+
+/* ========================= CARD READ MORE BUTTON ========================= */
+/* Specific styling for "Read More" buttons inside cards */
+.card .btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    width: auto;
+    /* Button width based on content, not full width */
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,114,255,0.3);
+}
+/* ========================= ENHANCED RESPONSIVE TYPOGRAPHY & MOBILE NAV ========================= */
+/* Add this entire block to the END of your CSS file */
+
+/* ----- 1. FLUID TYPOGRAPHY (Fonts scale smoothly on all screens) ----- */
+html {
+    font-size: 100%; /* Base 16px on desktop */
+}
+
+/* Adjust base font size on smaller screens */
+@media (max-width: 768px) {
+    html {
+        font-size: 93.75%; /* 15px */
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 87.5%; /* 14px */
+    }
+}
+
+/* Make all headings and text responsive using clamp() */
+.hero h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+}
+
+.section h2 {
+    font-size: clamp(1.6rem, 6vw, 2.5rem) !important;
+}
+
+.card h3 {
+    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+}
+
+.hero p {
+    font-size: clamp(0.9rem, 4vw, 1.25rem) !important;
+}
+
+.contact-card h3 {
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
+}
+
+.price {
+    font-size: clamp(1.2rem, 5vw, 1.75rem) !important;
+}
+
+.enquiry-info-card h3 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+}
+
+.enquiry-form-container h3 {
+    font-size: clamp(1.3rem, 5vw, 1.6rem) !important;
+}
+
+.card p, .contact-card p {
+    font-size: clamp(0.85rem, 3vw, 1rem) !important;
+}
+
+.nav-links a {
+    font-size: clamp(0.875rem, 3vw, 1rem) !important;
+}
+
+.btn {
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem) !important;
+}
+
+/* ----- 2. HAMBURGER MENU FOR MOBILE ----- */
+/* Hide hamburger button on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.menu-toggle:hover {
+    color: #00c6ff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile navigation breakpoint */
+@media (max-width: 768px) {
+    /* Reorganize navbar for mobile */
+    nav {
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    /* Show hamburger button */
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+    
+    /* Logo stays left */
+    .logo {
+        order: 1;
+    }
+    
+    /* Buttons stay right */
+    .nav-buttons {
+        order: 3;
+    }
+    
+    /* Navigation links - hidden by default, becomes dropdown */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        gap: 0;
+        background: #000000;
+        margin-top: 15px;
+        padding: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    /* When active class is added, show the menu */
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 14px 20px;
+        text-align: center;
+        font-size: 1rem;
+        transition: 0.2s;
+    }
+    
+    .nav-links a:hover {
+        background: rgba(0, 198, 255, 0.1);
+        color: #00c6ff;
+    }
+    
+    /* Remove underline animation on mobile for cleaner look */
+    .nav-links a::after {
+        display: none;
+    }
+    
+    /* Slide down animation */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Adjust button sizes on mobile */
+    .nav-buttons .btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Very small phones (below 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 15px;
+    }
+    
+    .logo img {
+        width: 100px;
+    }
+    
+    .nav-buttons {
+        gap: 8px;
+    }
+    
+    .nav-buttons .btn {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .menu-toggle {
+        font-size: 1.4rem;
+        padding: 5px 10px;
+    }
+    
+    .nav-links a {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet specific (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    
+    .logo img {
+        width: 120px;
+    }
+    
+    .btn {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ----- 3. IMPROVED MOBILE SPACING & LAYOUT ----- */
+@media (max-width: 768px) {
+    /* Better section spacing */
+    .section {
+        padding: 50px 16px;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        padding: 50px 16px;
+        min-height: 40vh;
+    }
+    
+    .hero-content .btn {
+        margin-top: 30px;
+    }
+    
+    /* Card improvements for mobile */
+    .cards {
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .card img, .card video {
+        height: 180px;
+    }
+    
+    /* Contact grid improvements */
+    .contact-grid {
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 25px 15px;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .contact-icon i {
+        font-size: 28px;
+    }
+    
+    /* Form improvements */
+    .form-container {
+        padding: 25px 20px;
+    }
+    
+    .input-group input,
+    .input-group textarea {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+    
+    /* Enquiry page mobile */
+    .enquiry-grid {
+        gap: 25px;
+    }
+    
+    .enquiry-info-card {
+        padding: 25px 20px;
+    }
+    
+    /* Map height adjustment */
+    .map-wrapper iframe {
+        height: 280px;
+    }
+    
+    /* Footer spacing */
+    footer {
+        padding: 25px 16px;
+        margin-top: 30px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small devices (below 400px) */
+@media (max-width: 400px) {
+    .hero {
+        padding: 40px 12px;
+    }
+    
+    .hero h1 {
+        margin-bottom: 12px;
+    }
+    
+    .section {
+        padding: 35px 12px;
+    }
+    
+    .card .btn {
+        padding: 6px 16px;
+        font-size: 0.75rem;
+    }
+    
+    .price {
+        padding: 4px 12px;
+    }
+    
+    .btn-submit, form button {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ----- 4. TOUCH-FRIENDLY INTERACTIONS ----- */
+@media (max-width: 768px) {
+    /* Make all clickable elements have minimum 44px touch target */
+    .nav-links a,
+    .btn,
+    .card .btn,
+    .contact-card a,
+    .nav-buttons .btn,
+    .menu-toggle,
+    .card,
+    .contact-card {
+        min-height: 44px;
+    }
+    
+    .nav-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Better line heights for readability */
+    p, .card p, .contact-card p {
+        line-height: 1.5;
+    }
+}
+
+/* ----- 5. SMOOTH SCROLLING & VISUAL FEEDBACK ----- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Active state for mobile menu items */
+.nav-links a:active {
+    background: rgba(0, 198, 255, 0.2);
+    transform: scale(0.98);
+}
+
+/* Card touch feedback on mobile */
+@media (max-width: 768px) {
+    .card:active {
+        transform: scale(0.98);
+        transition: transform 0.05s ease;
+    }
+    
+    .contact-card:active {
+        transform: scale(0.98);
+    }
+}

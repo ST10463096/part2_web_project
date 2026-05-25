@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version as HTML5 for proper browser rendering and standards compliance -->
+<html lang="en">
+    <!-- Root element of the HTML document. The 'lang' attribute sets the primary language to English for accessibility (screen readers) and SEO -->
+
+<head>
+    <!-- Contains meta-information about the document that is not displayed on the page itself -->
+    
+    <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the document as UTF-8, which supports almost all international characters, symbols, and emojis -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures proper responsive behavior on mobile devices by setting the viewport width equal to the device's width and initial zoom scale to 1.0 -->
+    
+    <title>Blog | Nass Tech Solution</title>
+    <!-- Sets the title of the web page, which appears on the browser tab and in search engine results -->
+    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Links an external CSS stylesheet (located at css/style.css) to control the visual styling and layout of the page -->
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Imports the Boxicons icon library from a CDN (Content Delivery Network), providing a wide range of scalable vector icons for use throughout the page -->
+    
+    <link rel="icon" href="images/logo/logo.png">
+    <!-- Sets the favicon (small icon displayed in the browser tab) to the company logo image -->
+</head>
+
+<body>
+    <!-- Contains all visible content of the web page that users interact with -->
+
+    <!-- ================= NAVIGATION BAR ================= -->
+    <!-- Creates the primary navigation menu at the top of the page for site-wide navigation -->
+    <nav>
+        <!-- Semantic HTML5 element specifically for navigation sections -->
+        
+        <div class="logo">
+            <!-- Container for the company logo -->
+            <img src="images/logo/logo.png" alt="Nass Tech Logo">
+            <!-- Displays the company logo image. The 'alt' attribute provides alternative text for screen readers and when images fail to load -->
+        </div>
+        
+        <ul class="nav-links">
+            <!-- Unordered list holding all primary navigation links -->
+            <li><a href="index.html">Home</a></li>
+            <!-- Link to the Home page -->
+            <li><a href="about_us.html">About</a></li>
+            <!-- Link to the About Us page -->
+            <li><a href="services.html">Services</a></li>
+            <!-- Link to the Services page -->
+            <li><a href="careers.html">Careers</a></li>
+            <!-- Link to the Careers/Jobs page -->
+            <li><a href="client-portal.html">Client Portal</a></li>
+            <!-- Link to the Client Portal (login-protected area for existing clients) -->
+            <li><a href="enquiries.html">Enquiry</a></li>
+            <!-- Link to the Enquiry page -->
+            <li><a href="contact_us.html">Contact</a></li>
+            <!-- Link to the Contact Us page -->
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <!-- Link to the Blog page. The 'active' class highlights the current page in the navigation menu -->
+        </ul>
+        
+        <div class="nav-buttons">
+            <!-- Container for authentication/account action buttons -->
+            <a href="#" class="btn">Sign In</a>
+            <!-- Sign In button (placeholder link). Allows existing users to log into their account -->
+            <a href="#" class="btn logout">Sign Out</a>
+            <!-- Sign Out button with additional 'logout' class for specific styling -->
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <!-- Large promotional banner area at the top of the page to grab user attention and introduce the blog content -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(0,42,58,0.85), rgba(0,114,255,0.75)), url('images/hero/blogb.jpg'); background-size: cover; background-position: center;">
+        <!-- Inline style creates a dark gradient overlay (135-degree angle from dark teal to semi-transparent blue) over a background image (blogb.jpg). 
+             The overlay improves text readability. 'background-size: cover' ensures the image covers the entire section; 'background-position: center' centers the image -->
+        
+        <div class="hero-content">
+            <!-- Container for the hero text content -->
+            <h1>Latest Blog & Videos</h1>
+            <!-- Main heading of the hero section - clearly states the page contains both written and video content -->
+            <p>Insights, tutorials, and trends in web design, business websites, and cybersecurity.</p>
+            <!-- Supporting subheading describing the types of content available on the blog -->
+        </div>
+    </section>
+
+    <!-- ================= VIDEO BLOG CARDS SECTION ================= -->
+    <!-- Displays featured video content in card format, allowing users to watch embedded videos directly on the page -->
+    <section class="section">
+        <!-- Generic section container with class 'section' for consistent styling -->
+        
+        <h2>Featured Video Blogs</h2>
+        <!-- Section heading identifying this section contains video content -->
+        
+        <div class="cards">
+            <!-- Container using CSS Grid or Flexbox to display cards in a responsive grid layout -->
+            
+            <!-- ================= VIDEO CARD 1: Web Design Trends ================= -->
+            <div class="card">
+                <!-- Individual card component for one video blog -->
+                
+                <video controls poster="images/blog/web-design-poster.jpg">
+                    <!-- HTML5 video element with controls (play, pause, volume, etc.)
+                         The 'controls' attribute adds browser-native video playback controls
+                         The 'poster' attribute displays a preview image before the video starts playing -->
+                    
+                    <source src="videos/trends.mp4" type="video/mp4">
+                    <!-- Source element specifying the video file location and MIME type (MP4 format).
+                         Credit note: Content sourced from TikTok -->
+                    
+                    Your browser does not support the video tag.
+                    <!-- Fallback text displayed if the browser does not support the HTML5 video element -->
+                </video>
+                
+                <h3>🎨 Top Web Design Trends 2026</h3>
+                <!-- Video title with art palette emoji for visual appeal -->
+                
+                <p>Discover the latest web design trends including AI-powered interfaces, neumorphism, dark mode, and immersive 3D elements that are shaping the future of websites.</p>
+                <!-- Brief description of what viewers will learn from this video -->
+                
+                <p><small>📅 Jan 15, 2026 | 8 min read</small></p>
+                <!-- Metadata: publication date and estimated reading time. 'small' tag makes this text slightly smaller than the main text -->
+            </div>
+
+            <!-- ================= VIDEO CARD 2: Business Website ================= -->
+            <div class="card">
+                <video controls poster="images/blog/business-poster.jpg">
+                    <source src="videos/website.mp4" type="video/mp4">
+                    <!-- Credit note: Reference to TikTok as content source -->
+                    Your browser does not support the video tag.
+                </video>
+                <h3>💼 Why Your Business Needs a Website</h3>
+                <!-- Video title with briefcase emoji representing business -->
+                <p>Learn how a professional website increases credibility, generates leads, and helps you compete in the digital marketplace 24/7. Essential for business growth.</p>
+                <p><small>📅 Jan 10, 2026 | 6 min read</small></p>
+            </div>
+
+            <!-- ================= VIDEO CARD 3: Cybersecurity ================= -->
+            <div class="card">
+                <video controls poster="images/blog/cybersecurity_post.jpg">
+                    <source src="videos/cyber.mp4" type="video/mp4">
+                    <!-- Credit note: Reference to TikTok as content source -->
+                    Your browser does not support the video tag.
+                </video>
+                <h3>🛡️ Cybersecurity Basics</h3>
+                <!-- Video title with shield emoji representing security/protection -->
+                <p>Protect your business from ransomware, phishing attacks, and data breaches with these essential cybersecurity strategies every business should implement.</p>
+                <p><small>📅 Jan 5, 2026 | 10 min read</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= RECENT ARTICLES SECTION - 6 ARTICLES ================= -->
+    <!-- Displays written blog content in a card-based layout, each with an image, title, description, and read more link -->
+    <section class="section">
+        <h2>Recent Articles</h2>
+        <!-- Section heading for the written articles section -->
+        
+        <div class="cards">
+            <!-- Container for article cards (reusing the 'cards' class for consistent grid layout) -->
+            
+            <!-- ================= ARTICLE 1: Top Web Design Trends ================= -->
+            <div class="card">
+                <img src="images/blog/web.jpg" alt="Top Web Design Trends">
+                <!-- Article featured image. Credit note: Reference to wallpapercave.com as image source -->
+                <h3>🎨 Top Web Design Trends 2026</h3>
+                <!-- Article title with art palette emoji -->
+                <p>Explore the most innovative web design trends including AI-generated layouts, neumorphism, micro-interactions, and responsive design patterns that will dominate this year.</p>
+                <p><small>📅 Jan 14, 2026 | 5 min read</small></p>
+                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
+                <!-- 'Read More' button linking to the full article (currently placeholder '#') -->
+            </div>
+
+            <!-- ================= ARTICLE 2: Cybersecurity Basics ================= -->
+            <div class="card">
+                <img src="images/blog/cybersecurity.jpg" alt="Cybersecurity Basics">
+                <!-- Article featured image. Credit note: Reference to wallpapercave.com as image source -->
+                <h3>🔒 Cybersecurity Basics for Beginners</h3>
+                <!-- Article title with lock emoji representing security -->
+                <p>Learn the fundamentals of cybersecurity including strong passwords, two-factor authentication, secure networks, and how to spot phishing emails.</p>
+                <p><small>📅 Jan 12, 2026 | 7 min read</small></p>
+                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
+            </div>
+
+            <!-- ================= ARTICLE 3: Why Your Business Needs a Website ================= -->
+            <div class="card">
+                <img src="images/blog/business.jpg" alt="Why Your Business Needs a Website">
+                <!-- Article featured image. Credit note: Reference to wallpapercave.com as image source -->
+                <h3>💼 Why Your Business Needs a Website</h3>
+                <!-- Article title with briefcase emoji -->
+                <p>Discover 10 compelling reasons why every business needs a professional website, from 24/7 availability to global reach and customer trust.</p>
+                <p><small>📅 Jan 10, 2026 | 6 min read</small></p>
+                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
+            </div>
+
+            <!-- ================= ARTICLE 4: AI in Cybersecurity ================= -->
+            <div class="card">
+                <img src="images/blog/ai_and_cybersecurity.png" alt="AI in Cybersecurity">
+                <h3>🤖 AI in Cybersecurity</h3>
+                <!-- Article title with robot emoji representing artificial intelligence -->
+                <p>How artificial intelligence and machine learning are revolutionizing threat detection, incident response, and predictive security analytics in 2026.</p>
+                <p><small>📅 Jan 8, 2026 | 8 min read</small></p>
+                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
+            </div>
+
+            <!-- ================= ARTICLE 5: Cloud Security Trends ================= -->
+            <div class="card">
+                <img src="images/blog/cloudsecurity.jpg" alt="Cloud Security Trends">
+                <h3>☁️ Cloud Security Trends 2026</h3>
+                <!-- Article title with cloud emoji representing cloud computing -->
+                <p>Explore the latest cloud security trends including zero-trust architecture, multi-cloud security, CASB, and compliance automation for modern enterprises.</p>
+                <p><small>📅 Jan 6, 2026 | 7 min read</small></p>
+                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
+            </div>
+
+            <!-- ================= ARTICLE 6: Data Privacy Regulation ================= -->
+            <div class="card">
+                <img src="images/blog/act.jpg" alt="Data Privacy Regulation">
+                <h3>📜 Data Privacy Regulations</h3>
+                <!-- Article title with scroll/document emoji representing legal regulations -->
+                <p>Stay compliant with POPIA, GDPR, CCPA, and other data protection laws. Learn key requirements, penalties, and best practices for data handling.</p>
+                <p><small>📅 Jan 3, 2026 | 9 min read</small></p>
+                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= NEWSLETTER SUBSCRIPTION SECTION ================= -->
+    <!-- Email subscription form allowing users to sign up for blog updates and company newsletters -->
+    <section class="section">
+        <h2>Subscribe to Our Newsletter</h2>
+        <!-- Section heading encouraging users to subscribe for updates -->
+        
+        <div class="form-container" style="max-width: 500px;">
+            <!-- Container for the subscription form. Inline style limits the maximum width to 500px for better readability -->
+            
+            <form id="newsletterForm">
+                <!-- Form element with unique ID 'newsletterForm' for JavaScript access.
+                     No 'action' or 'method' attributes because submission is handled entirely by JavaScript -->
+                
+                <div class="input-group">
+                    <!-- Container for the form field -->
+                    <label><i class='bx bx-envelope'></i> Email Address *</label>
+                    <!-- Label with envelope icon. Asterisk indicates this field is required -->
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                    <!-- Email input field. 'type="email"' provides browser validation for proper email format.
+                         'required' attribute ensures the field cannot be left empty -->
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <!-- Submit button with custom styling class -->
+                    <i class='bx bx-bell'></i> Subscribe
+                    <!-- Bell icon representing notifications/alerts -->
+                </button>
+            </form>
+            
+            <p id="newsletterMsg" style="text-align:center; margin-top:15px; display:none;"></p>
+            <!-- Hidden paragraph element that displays a success message after form submission.
+                 Initially hidden (display:none). When shown, it provides visual feedback to the user -->
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- Bottom section of the page containing copyright and legal information -->
+    <footer>
+        <!-- Semantic HTML5 element for footer content -->
+        <p>© 2026 Nass Tech Solution | All Rights Reserved</p>
+        <!-- Copyright notice with the company name, current year, and legal rights statement -->
+    </footer>
+
+    <!-- ================= JAVASCRIPT - NEWSLETTER FORM HANDLING ================= -->
+    <!-- Client-side JavaScript that handles newsletter subscription form validation and user feedback -->
+    <script>
+        // Newsletter form submission handler
+        // Select the newsletter form element by its ID and attach an event listener for the 'submit' event
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            // 'e' is the event object representing the form submission event
+            
+            e.preventDefault();
+            // Prevents the default form submission behavior (which would reload the page).
+            // This allows us to handle the subscription entirely with JavaScript for a smoother user experience.
+            
+            // ================= FORM DATA EXTRACTION =================
+            const email = document.getElementById('newsletterEmail').value.trim();
+            // Retrieve the value from the email input field and remove leading/trailing whitespace
+            
+            // ================= VALIDATION =================
+            if(email === "") {
+                // Check if the email field is empty
+                alert("Please enter your email address.");
+                // Show a warning alert box
+                return;
+                // Exit the function early - do not proceed
+            }
+            
+            // ================= SUCCESS RESPONSE =================
+            // If validation passes, display a success message to the user
+            
+            const msg = document.getElementById('newsletterMsg');
+            // Select the response message paragraph element
+            
+            msg.style.display = 'block';
+            // Change the display style from 'none' to 'block' to make the message visible
+            
+            msg.innerHTML = `<i class='bx bx-check-circle'></i> ✅ Thank you for subscribing! You'll receive our latest updates.`;
+            // Set the HTML content of the response message with a checkmark icon and thank you message.
+            // Template literals (backticks) allow embedding HTML and icons directly.
+            
+            msg.style.color = '#00c6ff';
+            // Set the text color to a bright cyan/blue color for visual appeal
+            
+            msg.style.background = '#e8f4fd';
+            // Set a light blue background color behind the message
+            
+            msg.style.padding = '12px';
+            // Add 12 pixels of padding inside the message box for comfortable spacing
+            
+            msg.style.borderRadius = '10px';
+            // Round the corners of the message box (10px radius) for a modern look
+            
+            // ================= RESET FORM =================
+            document.getElementById('newsletterForm').reset();
+            // Clear the email input field after successful submission
+            
+            // ================= AUTO-HIDE MESSAGE =================
+            setTimeout(() => {
+                // setTimeout schedules a function to run after a specified delay (in milliseconds)
+                
+                msg.style.display = 'none';
+                // Hide the success message by setting display back to 'none'
+                
+            }, 5000);
+            // Delay of 5000 milliseconds = 5 seconds. The success message will disappear automatically after 5 seconds.
+        });
+        
+        // Note: In a production environment, this script would typically send the email address to a backend server
+        // using fetch() or XMLHttpRequest to store subscribers in a database and integrate with an email marketing service.
+        
+    // ================= MOBILE MENU FUNCTIONALITY =================
+    // This script adds a hamburger menu button and makes the navigation responsive on mobile devices
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the navigation element
+        const nav = document.querySelector('nav');
+        
+        // Check if hamburger button already exists (to avoid duplicates)
+        const existingToggle = document.querySelector('.menu-toggle');
+        
+        // Create hamburger button if it doesn't exist
+        if (!existingToggle && nav) {
+            // Create the hamburger button element
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'menu-toggle';
+            toggleBtn.setAttribute('aria-label', 'Toggle menu');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.innerHTML = '<i class="bx bx-menu"></i>'; // Using Boxicons menu icon
+            
+            // Find where to insert the button (after the logo)
+            const logo = document.querySelector('.logo');
+            if (logo && logo.nextSibling) {
+                nav.insertBefore(toggleBtn, logo.nextSibling);
+            } else {
+                nav.insertBefore(toggleBtn, nav.firstChild);
+            }
+        }
+        
+        // Get the menu toggle button and navigation links
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        // Add click functionality if both elements exist
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Toggle the 'active' class on nav-links
+                navLinks.classList.toggle('active');
+                
+                // Update aria-expanded attribute for accessibility
+                const isExpanded = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isExpanded);
+                
+                // Change icon between menu and close (X)
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('bx-menu');
+                        icon.classList.add('bx-x');
+                    } else {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                }
+            });
+            
+            // Close the menu when a navigation link is clicked (good user experience)
+            const navLinksItems = navLinks.querySelectorAll('a');
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    
+                    // Reset the menu icon back to hamburger
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                    
+                    // Update aria-expanded
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+        
+        // Close menu when clicking outside of it (optional but improves UX)
+        document.addEventListener('click', function(event) {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks && navLinks.classList.contains('active')) {
+                // Check if click is outside both the menu toggle and the nav links
+                if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    
+                    // Reset the menu icon back to hamburger
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                    
+                    // Update aria-expanded
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        
+        // Handle window resize - reset menu if screen becomes larger
+        window.addEventListener('resize', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                
+                // Reset the menu icon
+                if (menuToggle) {
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('bx-x');
+                        icon.classList.add('bx-menu');
+                    }
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    });
+
+    </script>
+
+
+</body>
+</html>
